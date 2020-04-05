@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "..\include\main_lib.h"
+#include "main_lib.h"
 
 
 namespace neulib
