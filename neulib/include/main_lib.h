@@ -2,6 +2,12 @@
 
 #include <iostream>
 
+/*
+
+just a own built library from neulii
+
+*/
+
 namespace neulib
 {
 
