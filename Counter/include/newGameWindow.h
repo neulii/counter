@@ -7,6 +7,7 @@
 #endif
 
 #include "inputPanel.h"
+#include <vector>
 
 class NewGameWindow :
 	public wxDialog
