@@ -7,21 +7,31 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 	mainPanel = new wxPanel(this,1, wxDefaultPosition, wxDefaultSize);
 	
 	
+	int heightOfLine = 25;
 
-
-	wxStaticText* numberPlayersText = new wxStaticText(mainPanel, wxID_ANY, "Anzahl Spieler", wxPoint(20, 20));
+	wxStaticText* numberPlayersText = new wxStaticText(mainPanel, 
+													   wxID_ANY, 
+													   "Anzahl Spieler", 
+													   wxPoint(20, heightOfLine));
 
 	wxArrayString choices;
 	choices.Add("2");
 	choices.Add("3");
 
-	numberOfPlayers = new wxChoice(mainPanel, ID_NumberOfPlayers, wxPoint(100, 20), wxSize(50, 20),choices);
+	numberOfPlayers = new wxChoice(mainPanel, 
+								   ID_NumberOfPlayers, 
+								   wxPoint(150, 20), 
+								   wxSize(50, heightOfLine),
+								   choices);
 	numberOfPlayers->Select(0);
 	setGuiPlayers(2);
 
 
 	//ok button + position
-	wxSize okButtonSize(80, 30);
+	
+	int buttonWidth = 100;
+
+	wxSize okButtonSize(buttonWidth, 30);
 	wxSize okButtonOffsetRightBottom(50, 160);
 
 	int xPosOK = this->GetSize().GetWidth() - okButtonOffsetRightBottom.GetWidth() - okButtonSize.GetWidth();
@@ -31,7 +41,7 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 	okButton = new wxButton(mainPanel, ID_Button_Ok, "OK", okButtonPosition, okButtonSize);
 
 	//cancel button + position
-	wxSize cancelButtonSize(80, 30);
+	wxSize cancelButtonSize(buttonWidth, 30);
 	
 
 	int offsetOk_Cancel = 10;
