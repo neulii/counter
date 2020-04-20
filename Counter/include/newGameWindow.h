@@ -8,13 +8,14 @@
 
 #include "inputPanel.h"
 #include <vector>
+#include "game.h"
 
 class NewGameWindow :
 	public wxDialog
 {
 
 public:
-	NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
+	NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size, Game& game);
 
 	//evt functionso
 	void OnClose(wxCloseEvent& event);
@@ -24,6 +25,9 @@ public:
 	void setGuiPlayers(int playerNumber);
 
 private:
+	
+	Game* game = nullptr;
+
 	int newNumberOfPlayers = 2;
 	
 	wxPanel* mainPanel;

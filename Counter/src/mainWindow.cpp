@@ -69,7 +69,7 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 void MainWindow::NewGame(wxCommandEvent& event)
 {
 
-    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel", wxDefaultPosition, wxSize(500, 400));
+    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel", wxDefaultPosition, wxSize(500, 400), *game);
     newGameWindow->ShowModal();
     
 }

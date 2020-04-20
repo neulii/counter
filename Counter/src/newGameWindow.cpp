@@ -1,6 +1,6 @@
 #include "newGameWindow.h"
 
-NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
+NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size, Game& game)
 	:wxDialog(NULL, wxID_ANY, title, pos, size)
 {
 
@@ -15,6 +15,7 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 													   wxPoint(20, heightOfLine));
 
 	wxArrayString choices;
+	
 	choices.Add("2");
 	choices.Add("3");
 
@@ -76,6 +77,8 @@ void NewGameWindow::SelectedNumberOfPlayersChoice(wxCommandEvent& event)
 	setGuiPlayers(newNumberOfPlayers);
 
 	inputPanels.at(0)->SetFocus(); }
+
+
 void NewGameWindow::setGuiPlayers(int playerNumber)
 {
 	//panelPlayers= new wxPanel(this, wxID_ANY);
@@ -89,9 +92,8 @@ void NewGameWindow::setGuiPlayers(int playerNumber)
 	int offsetBetweenLines = 20;
 	
 		for (int ii = 0; ii <inputPanels.size(); ii++)
-		{
+		{ 
 			inputPanels.at(ii)->Destroy();
-
 		}
 
 	inputPanels.clear();
