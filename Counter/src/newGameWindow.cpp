@@ -4,6 +4,12 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 	:wxDialog(NULL, wxID_ANY, title, pos, size)
 {
 
+	this->game= &game;
+	
+
+
+
+
 	mainPanel = new wxPanel(this,1, wxDefaultPosition, wxDefaultSize);
 	
 	
@@ -147,15 +153,25 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 		std::cout << numberOfPlayers << std::endl;	
 		for(int i = 0; i<numberOfPlayers; i++)
 		{
-				std::cout << inputPanels.at(i)->getInput();
-		
+			std::string name = inputPanels.at(i)->getInput();
+			game->addPlayer(name);
 
 		}
-		break;
 
-	
+		
+		
+
+		
+		this->Destroy();
+
+		break;
 	}
 
+}
+
+bool NewGameWindow::inputDataIsValid()
+{
+	return inputDataValid;
 }
 
 wxBEGIN_EVENT_TABLE(NewGameWindow, wxDialog)

@@ -24,11 +24,14 @@ public:
 	
 	void setGuiPlayers(int playerNumber);
 
+	bool inputDataIsValid();
+
 private:
 	
 	Game* game = nullptr;
 
 	int newNumberOfPlayers = 2;
+	bool inputDataValid = false;
 	
 	wxPanel* mainPanel;
 

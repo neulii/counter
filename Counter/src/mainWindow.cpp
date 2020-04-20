@@ -36,6 +36,10 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 
     Centre();
 
+    game = new Game();
+   
+
+
 }
 void MainWindow::OnExit(wxCommandEvent& event)
 {
@@ -69,8 +73,16 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 void MainWindow::NewGame(wxCommandEvent& event)
 {
 
-    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel", wxDefaultPosition, wxSize(500, 400), *game);
+    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel", 
+                                                      wxDefaultPosition, 
+                                                      wxSize(500, 400), 
+                                                      *game);
     newGameWindow->ShowModal();
+   
+
+    
+    //wxLogDebug("super");
+
     
 }
 
