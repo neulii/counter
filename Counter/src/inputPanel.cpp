@@ -26,6 +26,17 @@ wxTextCtrl& InputPanel::getTextField()
 
 }
 
+std::string InputPanel::getInput()
+{
+	wxString input = inputName->GetValue();
+
+	std::string st = std::string(input.mb_str(wxConvUTF8));
+
+
+
+	return st;
+}
+
 void InputPanel::setLabelText(std::string labelText)
 {
 	labelPlayer->SetLabelText(labelText);

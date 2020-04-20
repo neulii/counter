@@ -19,8 +19,8 @@ private:
 public:
     InputPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 250,64 ), long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
     wxTextCtrl& getTextField();
-    void setLabelText(std::string labelText);
+   	std::string getInput(); 
+	void setLabelText(std::string labelText);
 };
-
 
 #endif // !INPUTPANEL_H

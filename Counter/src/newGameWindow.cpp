@@ -116,7 +116,8 @@ void NewGameWindow::setGuiPlayers(int playerNumber)
 void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 {
 	int answer = 0;
-	
+	int numberOfPlayers = 0;
+
 	wxMessageDialog* question = new wxMessageDialog(NULL,
 		wxT("Wollen Sie wirklich abbrechen?"), wxT("Achtung!! Die eingegebenen Daten gehen verloren!!"),
 		wxYES_NO | wxNO_DEFAULT | wxICON_WARNING);
@@ -140,13 +141,19 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 		//collect data from input fields
 
+		numberOfPlayers = inputPanels.size();
 
+		std::vector<Player*> players;
+		std::cout << numberOfPlayers << std::endl;	
+		for(int i = 0; i<numberOfPlayers; i++)
+		{
+				std::cout << inputPanels.at(i)->getInput();
+		
 
-
-
+		}
 		break;
-	default:
-		break;
+
+	
 	}
 
 }

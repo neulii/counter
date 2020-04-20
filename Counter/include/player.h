@@ -14,8 +14,11 @@ private:
     
 public:
     
+	//Player with Name -> points are set to 0
     Player(std::string name);
-    Player(std::string name, int points);
+    
+	//Player with Name and Points
+	Player(std::string name, int points);
     
     
 };
