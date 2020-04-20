@@ -75,8 +75,7 @@ void NewGameWindow::SelectedNumberOfPlayersChoice(wxCommandEvent& event)
 
 	setGuiPlayers(newNumberOfPlayers);
 
-	inputPanels.at(0)->SetFocus();
-}
+	inputPanels.at(0)->SetFocus(); }
 void NewGameWindow::setGuiPlayers(int playerNumber)
 {
 	//panelPlayers= new wxPanel(this, wxID_ANY);
@@ -101,8 +100,12 @@ void NewGameWindow::setGuiPlayers(int playerNumber)
 	{
 		
 		yLine = yStart + i * 25 + i * offsetBetweenLines;
+		
+		//size of InputPanel
+		int panelWidth = 200;
+		int panelHeight = 40;
 
-		InputPanel* tempPanel = new InputPanel(mainPanel, 1000 + 1, wxPoint(100, yLine), wxSize(200, 30));
+		InputPanel* tempPanel = new InputPanel(mainPanel, 1000 + 1, wxPoint(100, yLine), wxSize(panelWidth, panelHeight));
 		tempPanel->setLabelText("Spieler " + std::to_string(i+1));
 		inputPanels.push_back(tempPanel);
 	}
