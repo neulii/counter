@@ -151,15 +151,29 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 		std::vector<Player*> players;
 		
+		//check if input is valid
+		for(int i = 0; i<numberOfPlayers; i++)
+		{
+			//if an inputfield is empty
+			if(inputPanels.at(i)->getInput().empty())
+			{
+
+				wxMessageBox( wxT("Bitte kontrollieren Sie Ihre Eingaben"), wxT("Fehler"), wxICON_INFORMATION);	
+				return;
+			}
+		}
+
+
+
+
 		for(int i = 0; i<numberOfPlayers; i++)
 		{
 
 			std::string name = inputPanels.at(i)->getInput();
-			if (name.empty()) {
-				wxMessageBox("super", "super");
-				break;
+		//	if (name.empty()) {
+			//	break;
 
-			}
+			//}
 			game->addPlayer(name);
 
 		}

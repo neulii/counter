@@ -77,13 +77,13 @@ void MainWindow::NewGame(wxCommandEvent& event)
                                                       wxDefaultPosition, 
                                                       wxSize(500, 400), 
                                                       *game);
-    newGameWindow->ShowModal();
+//    newGameWindow->ShowModal();
    
     *game = newGameWindow->getNewGame();
 
 
     
-    wxLogDebug("super");
+ //   wxLogDebug("super");
 
     
 }
