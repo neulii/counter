@@ -150,10 +150,16 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 		numberOfPlayers = inputPanels.size();
 
 		std::vector<Player*> players;
-		std::cout << numberOfPlayers << std::endl;	
+		
 		for(int i = 0; i<numberOfPlayers; i++)
 		{
+
 			std::string name = inputPanels.at(i)->getInput();
+			if (name.empty()) {
+				wxMessageBox("super", "super");
+				break;
+
+			}
 			game->addPlayer(name);
 
 		}
@@ -169,9 +175,16 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 }
 
-bool NewGameWindow::inputDataIsValid()
+Game& NewGameWindow::getNewGame()
 {
-	return inputDataValid;
+	ShowModal();
+
+	game = new Game();
+	game->addPlayer("herbert");
+	game->addPlayer("susi");
+	return *game;
+
+
 }
 
 wxBEGIN_EVENT_TABLE(NewGameWindow, wxDialog)

@@ -79,9 +79,11 @@ void MainWindow::NewGame(wxCommandEvent& event)
                                                       *game);
     newGameWindow->ShowModal();
    
+    *game = newGameWindow->getNewGame();
+
 
     
-    //wxLogDebug("super");
+    wxLogDebug("super");
 
     
 }

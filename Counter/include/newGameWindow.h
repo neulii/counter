@@ -24,7 +24,7 @@ public:
 	
 	void setGuiPlayers(int playerNumber);
 
-	bool inputDataIsValid();
+	Game& getNewGame();
 
 private:
 	
