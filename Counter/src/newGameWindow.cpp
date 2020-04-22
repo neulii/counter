@@ -164,8 +164,9 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 		}
 
 
-
-		//if inputs are valid create players
+		//if inputs are valid create new game and add players
+		
+		game = new Game();
 		for(int i = 0; i<numberOfPlayers; i++)
 		{
 
@@ -174,10 +175,6 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 		}
 
-		
-		
-
-		
 		this->Destroy();
 
 		break;
@@ -189,12 +186,7 @@ Game& NewGameWindow::getNewGame()
 {
 	ShowModal();
 
-//	game = new Game();
-//	game->addPlayer("herbert");
-//	game->addPlayer("susi");
 	return *game;
-
-
 }
 
 wxBEGIN_EVENT_TABLE(NewGameWindow, wxDialog)
