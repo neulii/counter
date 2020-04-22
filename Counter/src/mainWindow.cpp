@@ -82,7 +82,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
     *game = newGameWindow->getNewGame();
 
  	
-	std::cout << game->    
+//	std::cout << game->    
 
     
 }
