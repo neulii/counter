@@ -165,15 +165,11 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 
 
-
+		//if inputs are valid create players
 		for(int i = 0; i<numberOfPlayers; i++)
 		{
 
 			std::string name = inputPanels.at(i)->getInput();
-		//	if (name.empty()) {
-			//	break;
-
-			//}
 			game->addPlayer(name);
 
 		}
@@ -193,9 +189,9 @@ Game& NewGameWindow::getNewGame()
 {
 	ShowModal();
 
-	game = new Game();
-	game->addPlayer("herbert");
-	game->addPlayer("susi");
+//	game = new Game();
+//	game->addPlayer("herbert");
+//	game->addPlayer("susi");
 	return *game;
 
 

@@ -55,3 +55,9 @@ void Game::addPlayer(std::string playerName)
 	players.push_back(tempPlayer);
 
 }
+
+std::vector<Player*>& Game:: getPlayers()
+{
+	return players;
+
+}

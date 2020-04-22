@@ -77,13 +77,12 @@ void MainWindow::NewGame(wxCommandEvent& event)
                                                       wxDefaultPosition, 
                                                       wxSize(500, 400), 
                                                       *game);
-//    newGameWindow->ShowModal();
-   
+	
+	//opens newgame dialog and get new game instance   
     *game = newGameWindow->getNewGame();
 
-
-    
- //   wxLogDebug("super");
+ 	
+	std::cout << game->    
 
     
 }
