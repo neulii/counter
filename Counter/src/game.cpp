@@ -56,7 +56,7 @@ void Game::addPlayer(std::string playerName)
 
 }
 
-std::vector<Player*>& Game:: getPlayers()
+std::vector<Player*>& Game::getPlayers()
 {
 	return players;
 

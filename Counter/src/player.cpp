@@ -20,3 +20,8 @@ Player::Player(std::string name, int points)
 
 
 }
+
+std::string& Player::getName()
+{
+	return name;
+}

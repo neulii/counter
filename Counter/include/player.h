@@ -20,7 +20,7 @@ public:
 	//Player with Name and Points
 	Player(std::string name, int points);
     
-    
+	std::string& getName();    
 };
 
 #endif

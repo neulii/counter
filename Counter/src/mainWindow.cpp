@@ -81,8 +81,14 @@ void MainWindow::NewGame(wxCommandEvent& event)
 	//opens newgame dialog and get new game instance   
     *game = newGameWindow->getNewGame();
 
- 	
-//	std::cout << game->    
+
+	//output playernames for debug to console
+ 	for(int i = 0; i< game->getPlayers().size();i++)
+	{
+
+		std::cout << game->getPlayers().at(i)->getName() << std::endl;    
+
+	}
 
     
 }
