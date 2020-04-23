@@ -90,6 +90,8 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
 	}
 
+
+	//show gamepanel with table and buttons
     
 }
 
