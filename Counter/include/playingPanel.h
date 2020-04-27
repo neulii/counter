@@ -7,12 +7,14 @@
 #endif
 
 
+#include "pointInputPanel.h"
 
 class PlayingPanel : public wxPanel
 {
 
 private:
 
+	PointInputPanel* panel;	
        
 public:
     PlayingPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 250,64 ), long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );

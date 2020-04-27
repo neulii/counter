@@ -6,7 +6,7 @@
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
-    wxPanel* panel = new wxPanel(this, wxID_ANY);
+    //wxPanel* panel = new wxPanel(this, wxID_ANY);
 
   /*  testButton = new wxButton(panel, ID_EXIT, wxT("Quit"), wxPoint(20, 20));
     newButton = new wxButton(panel, ID_NEWBUTTON, wxT("NewButton"), wxPoint(20, 60));
@@ -92,7 +92,9 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
 
 	//show gamepanel with table and buttons
-    
+	//just to see if panel is added
+	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
+	
 }
 
 void MainWindow::OnClose(wxCloseEvent& event)

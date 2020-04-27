@@ -7,6 +7,7 @@
 #endif
 
 #include "game.h"
+#include "playingPanel.h"
 
 class MainWindow : public wxFrame
 {
@@ -15,6 +16,13 @@ public:
 private:
 
     Game* game = nullptr;
+
+
+	PlayingPanel* playingPanel = new PlayingPanel(this,wxID_ANY);
+
+
+
+
 
 
    /* wxButton* testButton;

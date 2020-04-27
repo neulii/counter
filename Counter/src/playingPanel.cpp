@@ -8,7 +8,7 @@ PlayingPanel::PlayingPanel( wxWindow* parent, wxWindowID id, const wxPoint& pos,
 	panelSizer = new wxBoxSizer( wxHORIZONTAL );
 
 
-
+//	panel = new PointInputPanel(this);	
 
 	this->Layout();
 }

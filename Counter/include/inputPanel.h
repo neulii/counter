@@ -23,4 +23,4 @@ public:
 	void setLabelText(std::string labelText);
 };
 
-#endif // !INPUTPANEL_H
+#endif // INPUTPANEL_H
