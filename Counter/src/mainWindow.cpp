@@ -96,7 +96,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
     playingPanel = new PlayingPanel(this);
    
 
-	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
+//	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
 
 }
 

@@ -5,9 +5,16 @@ PointInputPanel::PointInputPanel( wxWindow* parent, wxWindowID id, const wxPoint
 	: wxPanel( parent, id, pos, size, style, name )
 {
 	wxBoxSizer* panelSizer;
-	panelSizer = new wxBoxSizer( wxVERTICAL);
+	panelSizer = new wxBoxSizer( wxHORIZONTAL);
 
 	playerName = new wxStaticText( this, wxID_ANY, wxT("player"), wxDefaultPosition, wxSize( 60,-1 ), 0 );
+
+
+	wxFont* tempFont = new wxFont();
+	*tempFont =	playerName->GetFont();
+	tempFont->SetPointSize(50);
+	playerName.SetFont(*tempFont);
+
 	//labelPlayer->Wrap( -1 );
 	//panelSizer->Add( labelPlayer, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
