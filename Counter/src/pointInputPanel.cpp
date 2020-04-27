@@ -7,13 +7,17 @@ PointInputPanel::PointInputPanel( wxWindow* parent, const std::string& nameOfPla
 	//wxBoxSizer* panelSizer;
 	//panelSizer = new wxBoxSizer( wxHORIZONTAL);
 
-	playerName = new wxStaticText( this, wxID_ANY, wxT("player"), wxPoint(10,10), wxSize( 60,30 ), 0 );
+	playerName = new wxStaticText(	this, 
+									wxID_ANY, 
+									wxT("player"), 
+									wxPoint(10,10), 
+									wxSize( 60,30 ), 0 );
 
 	playerName->SetLabel(nameOfPlayer);
 
 	wxFont* tempFont = new wxFont();
 	*tempFont =	playerName->GetFont();
-	tempFont->SetPointSize(20);
+	tempFont->SetPointSize(15);
 	playerName->SetFont(*tempFont);
 	
 	//panelSizer->Add(playerName,1);
@@ -21,7 +25,17 @@ PointInputPanel::PointInputPanel( wxWindow* parent, const std::string& nameOfPla
 	//labelPlayer->Wrap( -1 );
 	//panelSizer->Add( labelPlayer, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
-	inputPoints = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxPoint(10,40), wxSize( 150,30 ), 0 );
+	inputPoints = new wxTextCtrl(	this, 
+									wxID_ANY, 
+									wxEmptyString, 
+									wxPoint(10,40), 
+									wxSize( 150,30 ),
+									wxTE_CENTER);
+	inputPoints->SetFont(wxFont(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
+
+
+
+	inputPoints->SetFocus();
 	//panelSizer->Add( inputPoints, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
 //	this->SetSizer( panelSizer );
