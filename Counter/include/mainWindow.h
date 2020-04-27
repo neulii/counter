@@ -18,7 +18,7 @@ private:
     Game* game = nullptr;
 
 
-	PlayingPanel* playingPanel = new PlayingPanel(this,wxID_ANY);
+    PlayingPanel* playingPanel;
 
 
 

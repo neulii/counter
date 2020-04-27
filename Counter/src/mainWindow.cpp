@@ -93,7 +93,11 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
 	//show gamepanel with table and buttons
 	//just to see if panel is added
+    playingPanel = new PlayingPanel(this);
+   
+
 	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
+
 	
 }
 
