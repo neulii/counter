@@ -17,10 +17,11 @@ private:
 
        
 public:
-    PointInputPanel( wxWindow* parent, 
+    PointInputPanel( wxWindow* parent,
+					 const std::string& nameOfPlayer, 
 					 wxWindowID id = wxID_ANY, 
 					 const wxPoint& pos = wxDefaultPosition, 
-					 const wxSize& size = wxSize( 250,64 ), 
+					 const wxSize& size = wxSize( 250,80 ), 
 					 long style = wxTAB_TRAVERSAL, 
 					 const wxString& name = wxEmptyString );
 
