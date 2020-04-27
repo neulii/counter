@@ -15,7 +15,7 @@ class PlayingPanel : public wxPanel
 private:
        
 public:
-    PlayingPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 250,64 ), long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
+    PlayingPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
 
 
 

@@ -98,8 +98,8 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
 	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
 
-	
 }
+
 
 void MainWindow::OnClose(wxCloseEvent& event)
 {

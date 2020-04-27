@@ -22,9 +22,6 @@ private:
 
 
 
-
-
-
    /* wxButton* testButton;
     wxButton* newButton;
     wxTextCtrl* inputText;*/
