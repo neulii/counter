@@ -1,57 +1,37 @@
 #include "pointInputPanel.h"
 
 
-PointInputPanel::PointInputPanel( wxWindow* parent, const std::string& nameOfPlayer, wxWindowID id, const wxPoint& pos, const wxSize& size, long style, const wxString& name ) 
-	: wxPanel( parent, id, pos, size, style, name )
+PointInputPanel::PointInputPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style, const wxString& name) : wxPanel(parent, id, pos, size, style, name)
 {
-	//wxBoxSizer* panelSizer;
-	//panelSizer = new wxBoxSizer( wxHORIZONTAL);
+	wxBoxSizer* sizer;
+	sizer = new wxBoxSizer(wxVERTICAL);
 
-	playerName = new wxStaticText(	this, 
-									wxID_ANY, 
-									wxT("player"), 
-									wxPoint(10,10), 
-									wxSize( 60,30 ), 0 );
+	playerName = new wxStaticText(this, wxID_ANY, wxT("MyLabel"), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL);
+	playerName->Wrap(-1);
+	playerName->SetFont(wxFont(20, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
 
-	playerName->SetLabel(nameOfPlayer);
+	sizer->Add(playerName, 0, wxALL | wxEXPAND , 5);
 
-	wxFont* tempFont = new wxFont();
-	*tempFont =	playerName->GetFont();
-	tempFont->SetPointSize(15);
-	playerName->SetFont(*tempFont);
-	
-	//panelSizer->Add(playerName,1);
+	pointsInput = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_CENTER);
+	pointsInput->SetFont(wxFont(20, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString));
 
-	//labelPlayer->Wrap( -1 );
-	//panelSizer->Add( labelPlayer, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-
-	inputPoints = new wxTextCtrl(	this, 
-									wxID_ANY, 
-									wxEmptyString, 
-									wxPoint(10,40), 
-									wxSize( 150,30 ),
-									wxTE_CENTER);
-	inputPoints->SetFont(wxFont(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false, wxEmptyString));
+	sizer->Add(pointsInput, 0, wxALL | wxEXPAND, 5);
 
 
-
-	inputPoints->SetFocus();
-	//panelSizer->Add( inputPoints, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-
-//	this->SetSizer( panelSizer );
+	this->SetSizer(sizer);
 	this->Layout();
 }
 
 wxTextCtrl& PointInputPanel::getTextField()
 {
 
-	return *inputPoints;
+	return *pointsInput;
 
 }
 
 std::string PointInputPanel::getInput()
 {
-	wxString input = inputPoints->GetValue();
+	wxString input = pointsInput->GetValue();
 
 	std::string st = std::string(input.mb_str(wxConvUTF8));
 

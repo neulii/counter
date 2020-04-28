@@ -13,17 +13,12 @@ class PointInputPanel : public wxPanel
 
 private:
     wxStaticText* playerName;
-    wxTextCtrl* inputPoints;
+    wxTextCtrl* pointsInput;
 
        
 public:
-    PointInputPanel( wxWindow* parent,
-					 const std::string& nameOfPlayer, 
-					 wxWindowID id = wxID_ANY, 
-					 const wxPoint& pos = wxDefaultPosition, 
-					 const wxSize& size = wxSize( 250,80 ), 
-					 long style = wxTAB_TRAVERSAL, 
-					 const wxString& name = wxEmptyString );
+    PointInputPanel(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize(318, 133), long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString);
+
 
     wxTextCtrl& getTextField();
     std::string getInput(); 
