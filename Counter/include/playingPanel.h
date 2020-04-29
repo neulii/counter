@@ -14,7 +14,9 @@ class PlayingPanel : public wxPanel
 
 private:
       
-	PointInputPanel* pointInput;	
+    PointInputPanel* pointInput;
+    PointInputPanel * pointInput_2;
+
 
 
 
