@@ -13,6 +13,8 @@ class PlayingPanel : public wxPanel
 {
 
 private:
+
+    int players;
       
     PointInputPanel* pointInput;
     PointInputPanel * pointInput_2;
@@ -21,7 +23,7 @@ private:
 
 
 public:
-    PlayingPanel( wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
+    PlayingPanel( wxWindow* parent, int players, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
 
 
 
