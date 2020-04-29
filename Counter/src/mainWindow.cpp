@@ -82,6 +82,8 @@ void MainWindow::NewGame(wxCommandEvent& event)
     *game = newGameWindow->getNewGame();
 
 
+    
+
 	//output playernames for debug to console
  	for(int i = 0; i< game->getPlayers().size();i++)
 	{
@@ -90,10 +92,8 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
 	}
 
-
-	//show gamepanel with table and buttons
-	//just to see if panel is added
-    playingPanel = new PlayingPanel(this,2);
+    
+    playingPanel = new PlayingPanel(this,game->getPlayers().size());
    
 
 //	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));

@@ -14,16 +14,19 @@ class PlayingPanel : public wxPanel
 
 private:
 
-    int players;
-      
-    PointInputPanel* pointInput;
-    PointInputPanel * pointInput_2;
+    wxBoxSizer* playPanelSizer;
+
+    int players = 0;
+    PointInputPanel* tempPanel;
 
 
+    std::vector<PointInputPanel*> pointInputPanels;
 
 
 public:
     PlayingPanel( wxWindow* parent, int players, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
+
+   
 
 
 
