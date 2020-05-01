@@ -3,6 +3,8 @@
 
 PointInputPanel::PointInputPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style, const wxString& name) : wxPanel(parent, id, pos, size, style, name)
 {
+
+	wxLogDebug("new pointinputpanel");
 	wxBoxSizer* sizer;
 	sizer = new wxBoxSizer(wxVERTICAL);
 
@@ -43,4 +45,9 @@ std::string PointInputPanel::getInput()
 void PointInputPanel::setLabelText(std::string labelText)
 {
 	playerName->SetLabelText(labelText);
+}
+
+PointInputPanel::~PointInputPanel()
+{
+	wxLogDebug("destructor is executed");
 }

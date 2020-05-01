@@ -9,9 +9,16 @@ PlayingPanel::PlayingPanel( wxWindow* parent,int players, wxWindowID id, const w
 
 	this->SetSize(parent->GetSize());
 
+	for (int i = 0; i < pointInputPanels.size(); i++)
+	{
+		pointInputPanels.at(i)->Destroy();
+		
+	}
+	pointInputPanels.clear();
+
 	for (int i = 0; i < players; i++)
 	{
-		tempPanel = new PointInputPanel(this);;
+		PointInputPanel* tempPanel = new PointInputPanel(this);
 
 		tempPanel->SetPosition(wxPoint(0,i*100));
 
@@ -21,6 +28,7 @@ PlayingPanel::PlayingPanel( wxWindow* parent,int players, wxWindowID id, const w
 
 	}
 
+	wxLogDebug(std::to_string(players).c_str());
 
 
 	//sizer->Add(playerName, 0, wxALL | wxEXPAND, 5);
@@ -32,9 +40,6 @@ PlayingPanel::PlayingPanel( wxWindow* parent,int players, wxWindowID id, const w
 
 	this->Layout();
 }
-
-
-
 
 
 

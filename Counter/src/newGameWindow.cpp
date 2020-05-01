@@ -176,7 +176,7 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 		}
 
 		this->Destroy();
-
+	
 		break;
 	}
 
@@ -185,7 +185,7 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 Game& NewGameWindow::getNewGame()
 {
 	ShowModal();
-
+	Destroy();
 	return *game;
 }
 

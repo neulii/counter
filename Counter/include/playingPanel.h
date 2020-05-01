@@ -6,6 +6,8 @@
 #include <wx/wx.h>
 #endif
 
+#include <vector>
+
 
 #include "pointInputPanel.h"
 
@@ -17,7 +19,7 @@ private:
     wxBoxSizer* playPanelSizer;
 
     int players = 0;
-    PointInputPanel* tempPanel;
+   
 
 
     std::vector<PointInputPanel*> pointInputPanels;

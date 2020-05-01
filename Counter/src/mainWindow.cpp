@@ -81,7 +81,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
 	//opens newgame dialog and get new game instance   
     *game = newGameWindow->getNewGame();
 
-
+   
     
 
 	//output playernames for debug to console
@@ -91,10 +91,11 @@ void MainWindow::NewGame(wxCommandEvent& event)
 		std::cout << game->getPlayers().at(i)->getName() << std::endl;    
 
 	}
-
-    
+    wxLogDebug("tets");
+  
     playingPanel = new PlayingPanel(this,game->getPlayers().size());
    
+
 
 //	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
 
