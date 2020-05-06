@@ -1,22 +1,15 @@
 #include "playingPanel.h"
 #include "include/main_lib.h"
 
-
-
-
 PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const wxPoint& pos, const wxSize& size, long style, const wxString& name)
-	: wxPanel(parent, id, pos, size, style, name)
+	: wxPanel(parent, id, pos, size, style, name), players(players),game(NULL)
 {
-
-	this->players = players;
-	game = nullptr;
 
 	playPanelSizer = new wxBoxSizer(wxVERTICAL);
 
 	this->SetSize(parent->GetSize());
 
 	//wxMessageBox(neulib::intToC_String(pointInputPanels.size()));
-
 
 	for (int i = 0; i < players; i++)
 	{
@@ -27,7 +20,6 @@ PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const w
 		pointInputPanels.push_back(tempPanel);
 
 		playPanelSizer->Add(tempPanel, wxALL | wxEXPAND, 5);
-
 	}
 
 	this->Layout();
@@ -48,5 +40,4 @@ PlayingPanel::PlayingPanel( wxWindow* parent,Game& game)
 		pointInputPanels.at(i)->setLabelText(game.getPlayers().at(i)->getName());
  
 	}
-
 }
