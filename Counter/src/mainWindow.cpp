@@ -14,7 +14,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 
 
     wxMenu* menuFile = new wxMenu;
-  
+
     menuFile->Append(ID_NewGame, "Neues Spiel", "Startet ein Neues Spiel");
     menuFile->Append(ID_SaveGame, "Speichern", "Speichert das bestehende Spiel");
     menuFile->Append(ID_OpenGame, "Oeffnen", "oeffnet ein Spiel");
@@ -22,7 +22,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 
     menuFile->AppendSeparator();
     menuFile->Append(ID_Exit,"Beenden", "Beendet das Programm");
-    
+
     wxMenu* menuHelp = new wxMenu;
     menuHelp->Append(ID_Info,"Info", "Blendet das Info Feld ein ;)");
 
@@ -30,21 +30,21 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     menuBar->Append(menuFile, "&Datei");
     menuBar->Append(menuHelp, "&Info");
     SetMenuBar(menuBar);
-    
+
     CreateStatusBar();
     SetStatusText("No do schaust ;)");
 
-    Centre();	
-	
+    Centre();
+
     game = new Game();
 }
 
 void MainWindow::OnExit(wxCommandEvent& event)
 {
-    
+
     Close(true);
-   
-    
+
+
 }
 void MainWindow::OnAbout(wxCommandEvent& event)
 {
@@ -53,7 +53,7 @@ void MainWindow::OnAbout(wxCommandEvent& event)
         wxT("Error loading file"), wxT("Error"), wxYES_NO );
     dial->ShowModal();
 
-    
+
 }
 
 
@@ -71,32 +71,32 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 void MainWindow::NewGame(wxCommandEvent& event)
 {
 
-    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel", 
-                                                      wxDefaultPosition, 
-                                                      wxSize(500, 400), 
+    NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel",
+                                                      wxDefaultPosition,
+                                                      wxSize(500, 400),
                                                       *game);
-	
-	//opens newgame dialog and get new game instance   
+
+	//opens newgame dialog and get new game instance
     *game = newGameWindow->getNewGame();
 
    
-    
+
 
 	//output playernames for debug to console
  	for(int i = 0; i< game->getPlayers().size();i++)
 	{
 
-		std::cout << game->getPlayers().at(i)->getName() << std::endl;    
+		std::cout << game->getPlayers().at(i)->getName() << std::endl;
 
 	}
-    wxLogDebug("tets");
-	
+
 	//when exist a playing panel destroy it
-	if(playingPanel)
-		playingPanel->Destroy();
-  
+	if(playingPanel){
+        playingPanel->Destroy();
+    }
+
     playingPanel = new PlayingPanel(this,game->getPlayers().size());
-   
+
 
 
 //	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
@@ -122,4 +122,3 @@ wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
   /*  EVT_BUTTON(ID_NEWBUTTON, MainWindow::QuitButton)
     EVT_BUTTON(ID_EXIT, MainWindow::OnExit)*/
 wxEND_EVENT_TABLE()
-
