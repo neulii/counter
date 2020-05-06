@@ -40,6 +40,7 @@ PlayingPanel::PlayingPanel( wxWindow* parent,Game& game)
 	//wxMessageBox(neulib::intToC_String(players), "tst");
 
 	this->game = &game;
+	this->players = game.getPlayers().size();
 
 	for(int i = 0; i<players;i++)
 	{

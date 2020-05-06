@@ -12,6 +12,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     newButton = new wxButton(panel, ID_NEWBUTTON, wxT("NewButton"), wxPoint(20, 60));
     inputText = new wxTextCtrl(panel, ID_TEXTINPUT, wxT("super"), wxPoint(100, 100));*/
 
+    playingPanel = NULL;
 
     wxMenu* menuFile = new wxMenu;
 
@@ -37,6 +38,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     Centre();
 
     game = new Game();
+   
 }
 
 void MainWindow::OnExit(wxCommandEvent& event)
@@ -86,7 +88,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
 		std::cout << game->getPlayers().at(i)->getName() << std::endl;
 
 	}
-
+    
 	//when exist a playing panel destroy it
     //TODO must be changed
 	if(playingPanel!=NULL){
