@@ -25,9 +25,9 @@ public:
 	void openGame(std::string fileName);
 	int checkIfPlayerHasWon();
 
-	void Game::startGame();
+	void startGame();
 	
-		std::vector<Player*>&  getPlayers();
+	std::vector<Player*>&  getPlayers();
 
 	bool isGameRunning();
 
