@@ -97,6 +97,12 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
     playingPanel = new PlayingPanel(this, *game);
 
+    game->startGame();
+
+    SetStatusText("Jetzt gehts Los!!");
+
+
+
 }
 
 void MainWindow::OnClose(wxCloseEvent& event)

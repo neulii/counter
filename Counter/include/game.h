@@ -18,14 +18,16 @@ public:
 	Game();
 	Game(std::vector<Player*> players);
 
-	void startNewGame(std::vector<Player*> players);
+	//void startNewGame(std::vector<Player*> players);
 	void addPlayer(Player* player);
 	void addPlayer(std::string playerName);
 	void saveGame(std::string fileName);
 	void openGame(std::string fileName);
 	int checkIfPlayerHasWon();
 
-	std::vector<Player*>&  getPlayers();
+	void Game::startGame();
+	
+		std::vector<Player*>&  getPlayers();
 
 	bool isGameRunning();
 

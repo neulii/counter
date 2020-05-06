@@ -15,13 +15,16 @@ Game::Game(std::vector<Player*> players)
 {
 
 }
-
-
-void Game::startNewGame(std::vector<Player*> players)
-{
-	
+void Game::startGame() {
+	gameRuns = true;
 
 }
+
+//void Game::startNewGame(std::vector<Player*> players)
+//{
+//	
+//
+//}
 
 void Game::addPlayer(Player* player)
 {

@@ -175,6 +175,13 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 		}
 
+		
+
+		
+
+
+		
+
 		this->Destroy();
 	
 		break;
