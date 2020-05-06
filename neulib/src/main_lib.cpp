@@ -134,6 +134,11 @@ namespace neulib
 
 		return values;
 	}
+	
+	const char* intToC_String(int number)
+	{
+		return std::to_string(number).c_str();
+	}
 
 
 }// namespace neulib

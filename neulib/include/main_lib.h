@@ -46,4 +46,11 @@ namespace neulib
 	*/
 	std::vector<std::string> splitStringIntoStrings(std::string string, std::string seperator);
 	
+	
+	/*
+		converts an int to a cstring
+	*/
+	const char* intToC_String(int number);
+	
+	
 } //namespace neulib

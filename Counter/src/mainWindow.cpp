@@ -34,13 +34,11 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     CreateStatusBar();
     SetStatusText("No do schaust ;)");
 
-    Centre();
-
+    Centre();	
+	
     game = new Game();
-   
-
-
 }
+
 void MainWindow::OnExit(wxCommandEvent& event)
 {
     
@@ -92,6 +90,10 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
 	}
     wxLogDebug("tets");
+	
+	//when exist a playing panel destroy it
+	if(playingPanel)
+		playingPanel->Destroy();
   
     playingPanel = new PlayingPanel(this,game->getPlayers().size());
    
