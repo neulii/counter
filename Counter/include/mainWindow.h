@@ -8,6 +8,7 @@
 
 #include "game.h"
 #include "playingPanel.h"
+#include "include/main_lib.h"
 
 class MainWindow : public wxFrame
 {
@@ -26,14 +27,14 @@ private:
     wxButton* newButton;
     wxTextCtrl* inputText;*/
 
- 
+
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
     void SaveGame(wxCommandEvent& event);
     void OpenGame(wxCommandEvent& event);
     void NewGame(wxCommandEvent& event);
     void OnClose(wxCloseEvent& event);
-   
+
     wxDECLARE_EVENT_TABLE();
 };
 
@@ -41,7 +42,7 @@ private:
 
 enum id
 {
-    ID_NewGame = 1,
+    ID_NewGame = 6,
     ID_SaveGame = 2,
     ID_OpenGame = 3,
     ID_Exit = 4,

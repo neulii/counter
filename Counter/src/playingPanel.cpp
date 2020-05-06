@@ -28,4 +28,17 @@ PlayingPanel::PlayingPanel( wxWindow* parent,int players, wxWindowID id, const w
 	}
 
 	this->Layout();
+	this->SetFocus();
+}
+
+PlayingPanel::PlayingPanel( wxWindow* parent,Game& game)
+	: PlayingPanel(parent, game.getPlayers().size())
+{
+
+	for(int i = 0; i<players;i++)
+	{
+		pointInputPanels.at(i)->setLabelText(game.getPlayers().at(i)->getName());
+ 
+	}
+
 }

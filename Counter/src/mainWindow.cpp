@@ -56,8 +56,6 @@ void MainWindow::OnAbout(wxCommandEvent& event)
 
 }
 
-
-
 void MainWindow::SaveGame(wxCommandEvent& event)
 {
 
@@ -76,11 +74,10 @@ void MainWindow::NewGame(wxCommandEvent& event)
                                                       wxSize(500, 400),
                                                       *game);
 
+    //wxMessageBox(neulib::intToC_String(event.GetId()),"test");
+
 	//opens newgame dialog and get new game instance
     *game = newGameWindow->getNewGame();
-
-   
-
 
 	//output playernames for debug to console
  	for(int i = 0; i< game->getPlayers().size();i++)
@@ -95,14 +92,9 @@ void MainWindow::NewGame(wxCommandEvent& event)
         playingPanel->Destroy();
     }
 
-    playingPanel = new PlayingPanel(this,game->getPlayers().size());
-
-
-
-//	playingPanel->SetBackgroundColour(wxColour(*wxBLACK));
+    playingPanel = new PlayingPanel(this,*game);
 
 }
-
 
 void MainWindow::OnClose(wxCloseEvent& event)
 {

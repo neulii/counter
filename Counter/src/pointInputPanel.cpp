@@ -43,8 +43,3 @@ void PointInputPanel::setLabelText(std::string labelText)
 {
 	playerName->SetLabelText(labelText);
 }
-
-PointInputPanel::~PointInputPanel()
-{
-	wxLogDebug("destructor is executed");
-}
