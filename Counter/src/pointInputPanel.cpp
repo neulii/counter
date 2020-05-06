@@ -19,7 +19,6 @@ PointInputPanel::PointInputPanel(wxWindow* parent, wxWindowID id, const wxPoint&
 
 	sizer->Add(pointsInput, 0, wxALL | wxEXPAND, 5);
 
-
 	this->SetSizer(sizer);
 	this->Layout();
 }
@@ -36,8 +35,6 @@ std::string PointInputPanel::getInput()
 	wxString input = pointsInput->GetValue();
 
 	std::string st = std::string(input.mb_str(wxConvUTF8));
-
-
 
 	return st;
 }
