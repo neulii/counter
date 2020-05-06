@@ -4,9 +4,12 @@
 
 
 
-PlayingPanel::PlayingPanel( wxWindow* parent,int players, wxWindowID id, const wxPoint& pos, const wxSize& size, long style, const wxString& name )
-	: wxPanel( parent, id, pos, size, style, name ), players(this->players)
+PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const wxPoint& pos, const wxSize& size, long style, const wxString& name)
+	: wxPanel(parent, id, pos, size, style, name)
 {
+
+	this->players = players;
+	game = nullptr;
 
 	playPanelSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -34,9 +37,13 @@ PlayingPanel::PlayingPanel( wxWindow* parent,int players, wxWindowID id, const w
 PlayingPanel::PlayingPanel( wxWindow* parent,Game& game)
 	: PlayingPanel(parent, game.getPlayers().size())
 {
+	//wxMessageBox(neulib::intToC_String(players), "tst");
+
+	this->game = &game;
 
 	for(int i = 0; i<players;i++)
 	{
+		wxLogDebug(game.getPlayers().at(i)->getName().c_str());
 		pointInputPanels.at(i)->setLabelText(game.getPlayers().at(i)->getName());
  
 	}

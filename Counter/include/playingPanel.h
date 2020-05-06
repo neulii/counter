@@ -21,7 +21,7 @@ private:
 
     int players = 0;
 
-    Game* game;
+    Game* game = nullptr;
     std::vector<PointInputPanel*> pointInputPanels;
 
 public:

@@ -88,11 +88,12 @@ void MainWindow::NewGame(wxCommandEvent& event)
 	}
 
 	//when exist a playing panel destroy it
-	if(playingPanel){
+    //TODO must be changed
+	if(playingPanel!=NULL){
         playingPanel->Destroy();
     }
 
-    playingPanel = new PlayingPanel(this,*game);
+    playingPanel = new PlayingPanel(this, *game);
 
 }
 
