@@ -25,6 +25,8 @@ private:
     
     std::vector<PointInputPanel*> pointInputPanels;
 
+    wxButton* enterInputButton;
+
 public:
     PlayingPanel( wxWindow* parent, int players, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxTAB_TRAVERSAL, const wxString& name = wxEmptyString );
     PlayingPanel( wxWindow* parent, Game& game);

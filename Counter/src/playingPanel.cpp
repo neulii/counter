@@ -22,6 +22,12 @@ PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const w
 		playPanelSizer->Add(tempPanel, wxALL | wxEXPAND, 5);
 	}
 
+	enterInputButton = new wxButton(this, 1001, "Enter",wxPoint(0,players*100+50) , wxSize(100, 50));
+	
+	playPanelSizer->Add(enterInputButton);
+
+
+
 	this->Layout();
 	this->SetFocus();
 }
