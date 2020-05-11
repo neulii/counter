@@ -5,7 +5,15 @@ PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const w
 	: wxPanel(parent, id, pos, size, style, name), players(players),game(NULL)
 {
 
-	playPanelSizer = new wxBoxSizer(wxVERTICAL);
+	playPanelSizer = new wxBoxSizer(wxHORIZONTAL);
+	leftSizer = new wxBoxSizer(wxVERTICAL);
+
+
+
+
+
+
+	//rightSizer = new wxBoxSizer(wxVERTICAL);
 
 	this->SetSize(parent->GetSize());
 
@@ -15,18 +23,35 @@ PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const w
 	{
 		PointInputPanel* tempPanel = new PointInputPanel(this);
 
-		tempPanel->SetPosition(wxPoint(0,i*100));
+		//tempPanel->SetPosition(wxPoint(0,i*100));
 
 		pointInputPanels.push_back(tempPanel);
 
-		playPanelSizer->Add(tempPanel, wxALL | wxEXPAND, 5);
+		leftSizer->Add(tempPanel, 1, wxEXPAND | wxALL, 5);
 	}
 
 	enterInputButton = new wxButton(this, 1001, "Enter",wxPoint(0,players*100+50) , wxSize(100, 50));
+
+	leftSizer->Add(enterInputButton);
+	playPanelSizer->Add(leftSizer, 1, wxALL, 5);
 	
-	playPanelSizer->Add(enterInputButton);
 
 
+	rightSizer = new wxBoxSizer(wxVERTICAL);
+	
+	pointGrid = new wxGrid(parent, wxID_ANY);
+	//wxPanel* gridpanel = new wxPanel(this);
+	//gridpanel->SetBackgroundColour(*wxBLACK);
+
+	//rightSizer->Add(gridpanel);
+
+	pointGrid->CreateGrid(2, 2);
+	rightSizer->Add(pointGrid);
+
+	playPanelSizer->Add(rightSizer, 1, wxEXPAND, 5);
+
+	
+	this->SetSizer(playPanelSizer);
 
 	this->Layout();
 	this->SetFocus();

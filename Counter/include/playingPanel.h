@@ -8,7 +8,7 @@
 
 #include <vector>
 
-
+#include <wx/grid.h>
 #include "pointInputPanel.h"
 #include "game.h"
 
@@ -17,11 +17,15 @@ class PlayingPanel : public wxPanel
 
 private:
 
+
     wxBoxSizer* playPanelSizer;
+    wxBoxSizer* leftSizer;
+    wxBoxSizer* rightSizer;
 
     int players = 0;
 
     Game* game = nullptr;
+    wxGrid* pointGrid;
     
     std::vector<PointInputPanel*> pointInputPanels;
 

@@ -79,7 +79,18 @@ void MainWindow::NewGame(wxCommandEvent& event)
     //wxMessageBox(neulib::intToC_String(event.GetId()),"test");
 
 	//opens newgame dialog and get new game instance
-    *game = newGameWindow->getNewGame();
+
+    //when pressed ok
+
+    if (newGameWindow->ShowModal() == wxID_OK)
+    {
+        wxMessageBox("super", "super");
+    }
+    else
+    {
+        //anything else
+        return;
+    }
 
 	//output playernames for debug to console
  	for(int i = 0; i< game->getPlayers().size();i++)
