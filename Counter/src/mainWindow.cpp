@@ -13,6 +13,8 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     inputText = new wxTextCtrl(panel, ID_TEXTINPUT, wxT("super"), wxPoint(100, 100));*/
 
     playingPanel = NULL;
+   
+
 
     wxMenu* menuFile = new wxMenu;
 
@@ -105,7 +107,9 @@ void MainWindow::NewGame(wxCommandEvent& event)
             game->startGame();
 
             SetStatusText("Jetzt gehts Los!!");
-
+           
+           
+          this->Layout();
         }
     }
     else

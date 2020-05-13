@@ -22,7 +22,6 @@ private:
     PlayingPanel* playingPanel;
 
 
-
    /* wxButton* testButton;
     wxButton* newButton;
     wxTextCtrl* inputText;*/
