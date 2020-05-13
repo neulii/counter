@@ -70,21 +70,68 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 
 void MainWindow::NewGame(wxCommandEvent& event)
 {
+    /*
+    
+        show dialog
+
+        when ok then create new game oject from data
+
+        when canceld return
+    
+    
+    
+    
+    
+    */
+
+
+
+
+
+
 
     NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel",
                                                       wxDefaultPosition,
-                                                      wxSize(500, 400),
-                                                      *game);
+                                                      wxSize(500, 400));
 
     //wxMessageBox(neulib::intToC_String(event.GetId()),"test");
 
 	//opens newgame dialog and get new game instance
 
     //when pressed ok
+    //*game = newGameWindow->getNewGame();
 
     if (newGameWindow->ShowModal() == wxID_OK)
     {
-        wxMessageBox("super", "super");
+        //this->game = newGameWindow->getNewGameData();
+
+        if (! newGameWindow->getNewGameData())
+        {   
+            wxMessageBox("neues spiel wird begonnen", "neue");
+
+            //output playernames for debug to console
+            for (int i = 0; i < game->getPlayers().size(); i++)
+            {
+
+                std::cout << game->getPlayers().at(i)->getName() << std::endl;
+
+            }
+
+            //when exist a playing panel destroy it
+            //TODO must be changed
+            if (playingPanel != NULL) {
+                playingPanel->Destroy();
+            }
+
+            game = new Game(newGameWindow->getNewGameData());
+
+            playingPanel = new PlayingPanel(this, *game);
+
+            game->startGame();
+
+            SetStatusText("Jetzt gehts Los!!");
+
+        }
     }
     else
     {
@@ -92,25 +139,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
         return;
     }
 
-	//output playernames for debug to console
- 	for(int i = 0; i< game->getPlayers().size();i++)
-	{
-
-		std::cout << game->getPlayers().at(i)->getName() << std::endl;
-
-	}
-    
-	//when exist a playing panel destroy it
-    //TODO must be changed
-	if(playingPanel!=NULL){
-        playingPanel->Destroy();
-    }
-
-    playingPanel = new PlayingPanel(this, *game);
-
-    game->startGame();
-
-    SetStatusText("Jetzt gehts Los!!");
+	
 
 
 

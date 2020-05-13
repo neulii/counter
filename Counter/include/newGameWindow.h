@@ -15,7 +15,7 @@ class NewGameWindow :
 {
 
 public:
-	NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size, Game& game);
+	NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 
 	//evt functionso
 	void OnClose(wxCloseEvent& event);
@@ -24,6 +24,7 @@ public:
 	
 	void setGuiPlayers(int playerNumber);
 
+	Game* getNewGameData();
 	Game& getNewGame();
 
 private:
@@ -33,6 +34,8 @@ private:
 	int newNumberOfPlayers = 2;
 	bool inputDataValid = false;
 	
+
+
 	wxPanel* mainPanel;
 
 	wxChoice* numberOfPlayers;					//field to select number of players

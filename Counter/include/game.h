@@ -17,6 +17,7 @@ private:
 public:
 	Game();
 	Game(std::vector<Player*> players);
+	Game(const Game* game);
 
 	//void startNewGame(std::vector<Player*> players);
 	void addPlayer(Player* player);

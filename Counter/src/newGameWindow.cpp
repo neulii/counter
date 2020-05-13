@@ -1,15 +1,12 @@
 #include "newGameWindow.h"
 #include "include/main_lib.h"
 
-NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size, Game& game)
+NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
 	:wxDialog(NULL, wxID_ANY, title, pos, size)
 {
 
-	this->game= &game;
-	
-
-
-
+	//this->game= &game;
+	game = NULL;
 
 	mainPanel = new wxPanel(this,1, wxDefaultPosition, wxDefaultSize);
 	
@@ -176,19 +173,18 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 		}
 
-		
-
-		
-
-		
-		
-
 		this->Destroy();
 	
 		break;
 	}
 
 }
+
+Game* NewGameWindow::getNewGameData()
+{
+	return game;
+}
+
 
 Game& NewGameWindow::getNewGame()
 {

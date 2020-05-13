@@ -15,10 +15,20 @@ Game::Game(std::vector<Player*> players)
 {
 
 }
+
+Game::Game(const Game* game)
+{
+	this->gameRuns = game->gameRuns;
+	this->players = game->players;
+
+
+}
+
 void Game::startGame() {
 	gameRuns = true;
 
 }
+
 
 //void Game::startNewGame(std::vector<Player*> players)
 //{
