@@ -43,7 +43,7 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 	int yPosOK = this->GetSize().GetHeight() - okButtonOffsetRightBottom.GetHeight() - okButtonSize.GetHeight();
 
 	wxPoint okButtonPosition(xPosOK, yPosOK);
-	okButton = new wxButton(mainPanel, wxID_OK, "OK", okButtonPosition, okButtonSize);
+	okButton = new wxButton(mainPanel, ID_Button_Ok, "OK", okButtonPosition, okButtonSize);
 
 	//cancel button + position
 	wxSize cancelButtonSize(buttonWidth, 30);
@@ -55,7 +55,7 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 
 	wxPoint cancelButtonPosition(xPosCANCEL, yPosCANCEL);
 
-	cancelButton = new wxButton(mainPanel, wxID_CANCEL, "Abbrechen", cancelButtonPosition, cancelButtonSize);
+	cancelButton = new wxButton(mainPanel, ID_Button_Cancel, "Abbrechen", cancelButtonPosition, cancelButtonSize);
 
 
 
@@ -173,8 +173,8 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 		}
 
-		this->Destroy();
-	
+		EndModal(wxID_OK);
+
 		break;
 	}
 

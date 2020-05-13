@@ -44,7 +44,8 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 void MainWindow::OnExit(wxCommandEvent& event)
 {
 
-    Close(true);
+    this->Close(true);
+    this->Destroy();
 
 
 }
@@ -53,9 +54,8 @@ void MainWindow::OnAbout(wxCommandEvent& event)
     //wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
     wxMessageDialog* dial = new wxMessageDialog(NULL,
         wxT("Error loading file"), wxT("Error"), wxYES_NO );
+   
     dial->ShowModal();
-
-
 }
 
 void MainWindow::SaveGame(wxCommandEvent& event)
@@ -70,42 +70,16 @@ void MainWindow::OpenGame(wxCommandEvent& event)
 
 void MainWindow::NewGame(wxCommandEvent& event)
 {
-    /*
-    
-        show dialog
-
-        when ok then create new game oject from data
-
-        when canceld return
-    
-    
-    
-    
-    
-    */
-
-
-
-
-
-
-
+   
     NewGameWindow* newGameWindow = new NewGameWindow("Neues Spiel",
                                                       wxDefaultPosition,
                                                       wxSize(500, 400));
 
-    //wxMessageBox(neulib::intToC_String(event.GetId()),"test");
-
-	//opens newgame dialog and get new game instance
-
-    //when pressed ok
-    //*game = newGameWindow->getNewGame();
-
     if (newGameWindow->ShowModal() == wxID_OK)
     {
-        //this->game = newGameWindow->getNewGameData();
+   
 
-        if (! newGameWindow->getNewGameData())
+        if (newGameWindow->getNewGameData())
         {   
             wxMessageBox("neues spiel wird begonnen", "neue");
 
@@ -124,6 +98,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
             }
 
             game = new Game(newGameWindow->getNewGameData());
+            newGameWindow->Destroy();
 
             playingPanel = new PlayingPanel(this, *game);
 
@@ -138,17 +113,11 @@ void MainWindow::NewGame(wxCommandEvent& event)
         //anything else
         return;
     }
-
-	
-
-
-
 }
 
 void MainWindow::OnClose(wxCloseEvent& event)
 {
-    Destroy();
-
+    this->Destroy();
 }
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
