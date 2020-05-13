@@ -21,7 +21,7 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 	wxArrayString choices;
 	
 	choices.Add("2");
-	choices.Add("3");
+	//choices.Add("3");
 
 	numberOfPlayers = new wxChoice(mainPanel, 
 								   ID_NumberOfPlayers, 
