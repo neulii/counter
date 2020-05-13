@@ -83,7 +83,7 @@ void MainWindow::NewGame(wxCommandEvent& event)
 
         if (newGameWindow->getNewGameData())
         {   
-            wxMessageBox("neues spiel wird begonnen", "neue");
+            //wxMessageBox("neues spiel wird begonnen", "neue");
 
             //output playernames for debug to console
             for (int i = 0; i < game->getPlayers().size(); i++)
