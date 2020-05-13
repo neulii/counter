@@ -40,17 +40,12 @@ PlayingPanel::PlayingPanel(wxWindow* parent, int players, wxWindowID id, const w
 	rightSizer = new wxBoxSizer(wxVERTICAL);
 	
 	pointGrid = new wxGrid(parent, wxID_ANY);
-	//wxPanel* gridpanel = new wxPanel(this);
-	//gridpanel->SetBackgroundColour(*wxBLACK);
+	pointGrid->CreateGrid(1, 3);
 
-	//rightSizer->Add(gridpanel);
-
-	pointGrid->CreateGrid(2, 2);
 	rightSizer->Add(pointGrid);
 
 	playPanelSizer->Add(rightSizer, 1, wxEXPAND, 5);
 
-	
 	this->SetSizer(playPanelSizer);
 
 	this->Layout();
@@ -67,8 +62,10 @@ PlayingPanel::PlayingPanel( wxWindow* parent,Game& game)
 
 	for(int i = 0; i<players;i++)
 	{
-		wxLogDebug(game.getPlayers().at(i)->getName().c_str());
+		//title the labels of the pointinputpanels with the name
 		pointInputPanels.at(i)->setLabelText(game.getPlayers().at(i)->getName());
- 
+
+		//title the grid labels
+		pointGrid->SetColLabelValue(i, this->game->getPlayers().at(i)->getName());
 	}
 }
