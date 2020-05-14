@@ -67,5 +67,9 @@ PlayingPanel::PlayingPanel( wxWindow* parent,Game& game)
 
 		//title the grid labels
 		pointGrid->SetColLabelValue(i, this->game->getPlayers().at(i)->getName());
+		
 	}
+
+	pointGrid->SetColLabelValue(players , "Differenz");
+
 }
