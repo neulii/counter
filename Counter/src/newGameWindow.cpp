@@ -66,7 +66,20 @@ NewGameWindow::NewGameWindow(const wxString& title, const wxPoint& pos, const wx
 
 void NewGameWindow::OnClose(wxCloseEvent& event)
 {
-	Destroy();
+	cancelQuestionDialog = new wxMessageDialog(NULL,
+		wxT("Wollen Sie wirklich abbrechen?"), wxT("Achtung!! Die eingegebenen Daten gehen verloren!!"),
+		wxYES_NO | wxNO_DEFAULT | wxICON_WARNING);
+
+	int answer;
+
+	answer = cancelQuestionDialog->ShowModal();
+
+	if (answer == wxID_YES) {
+		cancelQuestionDialog->Destroy();
+		this->Destroy();
+
+	}
+	return;
 }
 
 void NewGameWindow::SelectedNumberOfPlayersChoice(wxCommandEvent& event)
@@ -122,7 +135,7 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 	int answer = 0;
 	int numberOfPlayers = 0;
 
-	wxMessageDialog* question = new wxMessageDialog(NULL,
+	cancelQuestionDialog = new wxMessageDialog(NULL,
 		wxT("Wollen Sie wirklich abbrechen?"), wxT("Achtung!! Die eingegebenen Daten gehen verloren!!"),
 		wxYES_NO | wxNO_DEFAULT | wxICON_WARNING);
 	
@@ -131,10 +144,10 @@ void NewGameWindow::ButtonClicked(wxCommandEvent& event)
 
 	//Cancel Button
 	case ID_Button_Cancel:
-		answer = question->ShowModal();
+		answer = cancelQuestionDialog->ShowModal();
 
 		if (answer == wxID_YES) {
-			question->Destroy();
+			cancelQuestionDialog->Destroy();
 			this->Destroy();
 		
 		}

@@ -27,6 +27,8 @@ public:
 	Game* getNewGameData();
 	Game& getNewGame();
 
+	wxMessageDialog* cancelQuestionDialog = nullptr;
+
 private:
 	
 	Game* game = nullptr;
